@@ -1,3 +1,5 @@
+@import './base.css';
+
 * {
   font-family: 'Roboto', sans-serif;
 }
@@ -74,23 +76,9 @@ button.signin-btn {
 }
 
 .container {
-  border-radius: 15px;
+  border-radius: 10px;
   margin:10px auto;
   width: 350px;
   background-color: #fff;
   padding: 30px;
 }
-
-/*  
-
-/* header { 
-  overflow: hidden;
-  background-color: #333;
-}
-
-Link to keep going: https://www.youtube.com/watch?v=3qmL-ebPYzw
-
-box {
-  
-}
-*/

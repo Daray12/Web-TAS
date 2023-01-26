@@ -1,11 +1,49 @@
-<html>
 
+<script>
+
+class Student {
+  FirstName = "";
+  AbsentReason = "";
+  Period = "";
+  constructor(fname, absent, period) 
+  {
+    this.FirstName = fname;
+    this.AbsentReason = absent;
+    this.Period = period;
+  }
+  getFirstName()
+  {
+    return this.FirstName;
+  }
+  getAbsentReason()
+  {
+    return this.AbsentReason;
+  }        
+ getPeriod()
+  {
+    return this.AbsentReason;
+  }        
+}
+var tester1 = new Student('Jimbo', 'He was to Sus', "3rd");
+var tester2 = new Student('s', 'asd', "35rd");
+var tester3 = new Student('v', 'dfg', "33rd");
+export default {
+data() {
+  return {
+    items: [tester1,tester2,tester3]
+  }
+}
+}
+
+</script>
+
+<template>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>TAS</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-  <!-- Required meta tags -->
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -37,9 +75,7 @@
       </div>
     </div>
   </nav>
-
-  </br></br>
-  <div class="container">
+  <div class="container" id="app">
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
         aria-expanded="false">
@@ -51,7 +87,6 @@
         <li><a class="dropdown-item" href="#">three</a></li>
       </ul>
     </div>
-  </br>
     <table class="table">
       <thead>
         <tr>
@@ -62,66 +97,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Pepe</td>
-          <td>Fell asleep</td>
-          <td>7</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Juan</td>
-          <td>Did not want to come</td>
-          <td>7</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td colspan="2">Jose</td>
-          <td>7</td>
-        <tr>
-          <th scope="row">4</th>
-          <td>Armando</td>
-          <td>To be honest, I dont know</td>
-          <td>7</td>
-        </tr>
-        <tr>
-          <th scope="row">5</th>
-          <td>Ernesto</td>
-          <td>Left his backpack at home and decided to stay</td>
-          <td>7</td>
-        </tr>
-        <tr>
-          <th scope="row">6</th>
-          <td colspan="2">Jose</td>
-          <td>7</td>
-        </tr>
-        <tr>
-          <th scope="row">7</th>
-          <td>Imelda</td>
-          <td>Decided to do the homework that she did not do the day prior</td>
-          <td>7</td>
-        </tr>
-        <tr>
-          <th scope="row">8</th>
-          <td>Ermenegildo</td>
-          <td>Fell asleep</td>
-          <td>7</td>
-        </tr>
-        <tr>
-          <th scope="row">9</th>
-          <td>Ramon</td>
-          <td>Fell asleep</td>
-          <td>7</td>
-        </tr>
-        <tr>
-          <th scope="row">10</th>
-          <td>Mamerto</td>
-          <td>Fell asleep</td>
-          <td>7</td>
+        <!--Put Vue Student Component--> 
+        <tr v-for="(item, index) in items">
+          <td> <b>{{ index }}</b> </td>
+          <td>{{item.getFirstName()}}</td>
+          <td> {{item.getAbsentReason()}}</td>
+          <td class="test-left">{{item.getPeriod()}}</td>
         </tr>
       </tbody>
     </table>
   </div>
 </body>
-
-</html>
+</template>
