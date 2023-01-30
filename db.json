@@ -1,20 +1,25 @@
-{ 
-    "Student_0": 
-    {
-      "Name": "Doe",
-      "AbsentReason": "Went to nasa",
-      "Period": "4th"
-    },
-    "Student_1": 
-    {
-      "Name": "Hamlet",
-      "AbsentReason": "Arbys",
-      "Period": "5th"
-    },
-    "Student_2": 
-    {
-      "Name": "Swiss Burger",
-      "AbsentReason": "He was to cheesy",
-      "Period": "1st"
+{
+    "StudentObjects":
+[
+    {     
+        "Student_0": 
+        {
+        "Name": "Doe",
+        "AbsentReason": "Went to nasa",
+        "Period": "4th"
+        },
+        "Student_1": 
+        {
+        "Name": "Hamlet",
+        "AbsentReason": "Arbys",
+        "Period": "5th"
+        },
+        "Student_2": 
+        {
+        "Name": "Swiss Burger",
+        "AbsentReason": "He was to cheesy",
+        "Period": "1st"
+        }
     }
- }
+]
+}
