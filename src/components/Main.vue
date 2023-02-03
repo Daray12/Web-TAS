@@ -1,40 +1,11 @@
 
 <script>
-
-class Student {
-  FirstName = "";
-  AbsentReason = "";
-  Period = "";
-  constructor(fname, absent, period) 
-  {
-    this.FirstName = fname;
-    this.AbsentReason = absent;
-    this.Period = period;
+  export default {
+    name: 'StudentItem',
+    props: {
+      item: [], // Required prop
+    }  	  	
   }
-  getFirstName()
-  {
-    return this.FirstName;
-  }
-  getAbsentReason()
-  {
-    return this.AbsentReason;
-  }        
- getPeriod()
-  {
-    return this.AbsentReason;
-  }        
-}
-var tester1 = new Student('Jimbo', 'He was to Sus', "3rd");
-var tester2 = new Student('s', 'asd', "35rd");
-var tester3 = new Student('v', 'dfg', "33rd");
-export default {
-data() {
-  return {
-    items: [tester1,tester2,tester3]
-  }
-}
-}
-
 </script>
 
 <template>
