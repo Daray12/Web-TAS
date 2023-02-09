@@ -1,11 +1,57 @@
+<script setup>
+import {onMounted } from "vue";
+import EventService from "../services/EventService";
+var toSend;
+onMounted(()=>{
+  EventService.getEvents().then((response)=> {
+   toSend.value = response.data;
+    console.log(response.data);
+    //Add a way to send this to the main.Vue file
+  }).catch((error)=>{
+    console.log(error)
+  })
+})
+</script>
 
 <script>
-  export default {
-    name: 'StudentItem',
-    props: {
-      item: [], // Required prop
-    }  	  	
+import EventService from "../services/EventService";
+class Student {
+  FirstName = "";
+  AbsentReason = "";
+  Period = "";
+  constructor(fname, absent, period) 
+  {
+    this.FirstName = fname;
+    this.AbsentReason = absent;
+    this.Period = period;
   }
+  getFirstName()
+  {
+    return this.FirstName;
+  }
+  getAbsentReason()
+  {
+    return this.AbsentReason;
+  }        
+ getPeriod()
+  {
+    return this.AbsentReason;
+  }        
+}
+
+
+var studentToSend = [];
+var student_data = EventService.passValue(0, true)
+student_data.forEach(x => {studentToSend[i] = new Student(x.Name, x.AbsentReason, x.Period);});
+export default 
+{  
+  data()
+  {
+    return{
+      items: studentToSend
+    }
+  }
+}
 </script>
 
 <template>
