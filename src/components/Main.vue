@@ -1,20 +1,8 @@
 <script setup>
 import {onMounted } from "vue";
-import EventService from "../services/EventService";
-var toSend;
-onMounted(()=>{
-  EventService.getEvents().then((response)=> {
-   toSend.value = response.data;
-    console.log(response.data);
-    //Add a way to send this to the main.Vue file
-  }).catch((error)=>{
-    console.log(error)
-  })
-})
 </script>
 
 <script>
-import EventService from "../services/EventService";
 class Student {
   FirstName = "";
   AbsentReason = "";
@@ -38,20 +26,27 @@ class Student {
     return this.AbsentReason;
   }        
 }
-
-
-var studentToSend = [];
-var student_data = EventService.passValue(0, true)
-student_data.forEach(x => {studentToSend[i] = new Student(x.Name, x.AbsentReason, x.Period);});
+onMounted(()=>{
+  var student_data = Obejct;
+  EventService.getEvents().then((response)=> {
+    student_data.value = response.data;
+    console.log(response.data);
+    //Add a way to send this to the main.Vue file
+  }).catch((error)=>{
+    console.log(error)
+  });
+  var studentToSend = [];
+  student_data.forEach(x => {studentToSend[x] = new Student(x.Name, x.AbsentReason, x.Period);});
+})
 export default 
-{  
-  data()
-  {
-    return{
-      items: studentToSend
+  {  
+    data()
+    {
+      return{
+        items: studentToSend
+      }
     }
   }
-}
 </script>
 
 <template>
